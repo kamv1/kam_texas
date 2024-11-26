@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Hold'em Poker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Texas Hold'em Poker</h1>
+    
+    <!-- Kullanıcı Adı Giriş Ekranı -->
+    <div id="username-container">
+        <h2>Enter Your Name</h2>
+        <input type="text" id="username-input" placeholder="Your name">
+        <button onclick="startGameSetup()">Start Game</button>
+    </div>
+    
+    <!-- Oyun Alanı -->
+    <div id="game-container" style="display: none;">
+        <div id="game-board">
+            <div id="player-hand" class="hand">
+                <h2 id="player-name">Player Hand</h2>
+                <div id="player-cards"></div>
+            </div>
+            <div id="community-cards" class="hand">
+                <h2>Community Cards</h2>
+                <div id="community"></div>
+            </div>
+            <div id="dealer-hand" class="hand">
+                <h2>KAM Hand</h2>
+                <div id="dealer-cards"></div>
+            </div>
+        </div>
+        <div id="result-panel">
+            <h2>Result</h2>
+            <p id="result">No result yet</p>
+        </div>
+    </div>
+    
+    <!-- Butonlar -->
+    <div id="buttons" style="display: none;">
+        <button onclick="startGame()">Deal Cards</button>
+        <button onclick="nextPhase()">Next Phase</button>
+        <button onclick="resetGame()">Reset</button>
+    </div>
+    
+    <!-- Donate Bölümü -->
+    <div id="donate-section">
+        <h2>Donate</h2>
+        <p>If you enjoy this game, consider supporting us!</p>
+        <button id="show-donate" onclick="toggleDonateOptions()">Show Donate Options</button>
+        <div id="crypto-logos" class="crypto-options" style="display: none;">
+            <div class="crypto" onclick="copyToClipboard('1CVkvbFFZ2BPCQYWjXisicZ1FzbkeT3nTx')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/800px-Bitcoin.svg.png" alt="Bitcoin" title="Bitcoin (BTC)">
+            </div>
+            <div class="crypto" onclick="copyToClipboard('0x5891014db0da0f3d2df596854fcb5653d4a12af4')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/200px-Ethereum-icon-purple.svg.png" alt="Ethereum" title="Ethereum (ETH)">
+            </div>
+            <div class="crypto" onclick="copyToClipboard('terra15nke8ae5fstjxpvkxykfxazxgpjzcnhthm0gvh')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBtkw7TwP1q-4ly7BVT6G2_giBqGlhbCH8Jg&s" alt="LUNC" title="LUNC">
+            </div>
+            <div class="crypto" onclick="copyToClipboard('0xbb82b93350441c2ecbfc136b10753f7bc050c601')">
+                <img src="https://assets.coingecko.com/coins/images/32070/large/SHIDO.png?1696530867" alt="Shido" title="Shido">
+            </div>
+            <div class="crypto" onclick="copyToClipboard('0x5891014db0da0f3d2df596854fcb5653d4a12af4')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiJZ1mO3I7MyA89mMTxpv7j4mpeI8ZvZ7i1Q&s" alt="BNB" title="BNB">
+            </div>
+        </div>
+        <p id="copy-message" style="color: lime; display: none;">Address copied to clipboard!</p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

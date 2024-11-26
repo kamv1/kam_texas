@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #2e3b55;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.hand {
+    margin-top: 20px;
+}
+
+.card {
+    display: inline-block;
+    width: 80px;
+    height: 120px;
+    margin: 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden; /* Görüntü taşmasını önlemek için */
+}
+
+/* Kartların ön yüzü için görsel arka plan */
+.card.front {
+    background-image: url('https://i.abcnewsfe.com/a/8729e40e-d812-4def-a87c-c53d6f17621f/GMA_Main_WolfMoon_v01_ag_1705441080651_hpMain_9x16.jpg?w=992');
+    background-size: cover;
+    background-position: center;
+    color: #000; /* Yazı rengi */
+}
+
+/* Kart üzerindeki yazının konumu */
+.card .top-left,
+.card .bottom-right {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+.card .top-left {
+    top: 5px;
+    left: 5px;
+}
+
+.card .bottom-right {
+    bottom: 5px;
+    right: 5px;
+}
+
+/* Kırmızı renkli kartlar (Kupa ve Karo) */
+.card.red .top-left,
+.card.red .bottom-right {
+    color: red;
+}
+
+/* Siyah renkli kartlar (Maça ve Sinek) varsayılan kalır */
+
+/* Kartların arka yüzü */
+.card.back {
+    background-image: url('https://s2.coinmarketcap.com/static/img/coins/200x200/4172.png');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #666; /* Daha belirgin bir gri sınır */
+    border-radius: 10px;
+}
+
+/* Düğmeler */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Düğme renkleri */
+button:nth-child(1) {
+    background-color: #4caf50;
+}
+
+button:nth-child(2) {
+    background-color: #2196f3;
+}
+
+button:nth-child(3) {
+    background-color: #f44336;
+}
+
+/* Hover efektleri */
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Sonuç paneli */
+#result-panel {
+    width: 25%;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #3b4a6b;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#result-panel h2 {
+    color: #f9a825;
+    margin-bottom: 10px;
+}
+
+#result {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Oyun alanı düzeni */
+#game-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+#game-board {
+    width: 70%;
+}
+
+/* Kullanıcı adı giriş alanı */
+#username-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#username-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    width: 200px;
+}
+
+#username-container button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#username-container button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Bağış bölümü */
+#donate-section {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #444;
+    border-radius: 10px;
+    border: 2px solid #666;
+    color: #fff;
+}
+
+#donate-section h2 {
+    color: #f9a825;
+}
+
+#donate-section p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+#donate-section button {
+    background-color: #f57c00;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+#donate-section button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.crypto-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.crypto {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.crypto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #666;
+}
+
+.crypto:hover {
+    transform: scale(1.2);
+    border-color: #fff;
+}
+
+/* Kopyalama mesajı */
+#copy-message {
+    color: lime;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
